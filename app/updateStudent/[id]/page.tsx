@@ -60,21 +60,22 @@ export default function updateStudent({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className='w-screen h-screen p-5'>
-        <div className="card w-full glass mx-auto p-3 sm:min-w-1/2 sm:max-w-[500px]">
-          <div className='text-2xl mx-auto'>Thông tin sinh viên</div>
-          <form onSubmit={(e) => submitForm(e)} className="mx-auto w-full p-5">
-            <div className='py-5 grid md:grid-cols-3'>
-              <label htmlFor="id">Mã sinh viên</label>
-              <input type="text" className="min-w-[150px] col-span-2" id="id" name="id" value={params.id} readOnly />
+    <div className='w-screen h-screen p-5 bg-secondary'>
+        <div className="card w-full bg-neutral text-neutral-content backdrop-blur-sm shadow-xl mx-auto mt-[2em] p-3 sm:min-w-1/2 sm:max-w-[500px]">
+          <div className='card-body'>
+          <div className='text-[2em] text-800 mx-auto card-title font-extrabold'>Thông tin sinh viên</div>
+          <form onSubmit={(e) => submitForm(e)} className="mx-auto w-full p-3">
+            <div className='py-[0.7em] grid md:grid-cols-3'>
+              <label htmlFor="id" className='label-text text-lg font-semibold'>Mã sinh viên</label>
+              <input type="text" className="input input-sm min-w-[150px] col-span-2" id="id" name="id" value={params.id} readOnly />
             </div>
-            <div className='py-5 grid md:grid-cols-3'>
-              <label htmlFor="name">Họ và tên</label>
-              <input type="text" className="min-w-[150px] col-span-2" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <div className='py-[0.7em] grid md:grid-cols-3'>
+              <label htmlFor="name" className='label-text text-lg font-semibold'>Họ và tên</label>
+              <input type="text" className="input input-sm min-w-[150px] col-span-2" id="name" name="name" required maxLength={60} value={name} onChange={(e) => setName(e.target.value)} />
             </div>
-            <div className='py-5 grid md:grid-cols-3'>
-              <label htmlFor="birthDate">Ngày sinh</label>
-              <input type="date" className="min-w-[150px] col-span-2" id="birthDate" name="birthDate" value={rewriteDate(birthDate)} onChange={(e) => setBirthDate(e.target.value)} />
+            <div className='py-[0.7em] grid md:grid-cols-3'>
+              <label htmlFor="birthDate" className='label-text text-lg font-semibold'>Ngày sinh</label>
+              <input type="date" className="input input-sm min-w-[150px] col-span-2" id="birthDate" name="birthDate" required min={"1970-01-01"} value={rewriteDate(birthDate)} onChange={(e) => setBirthDate(e.target.value)} />
             </div>
             {/* <div className='py-5'>
             <label htmlFor="gender">Giới tính</label>
@@ -84,12 +85,13 @@ export default function updateStudent({ params }: { params: { id: string } }) {
               <input type="radio" value={"Other"} name="gender" /> Khác
             </div>
           </div> */}
-            <div className='py-5 grid md:grid-cols-3'>
-              <label htmlFor="hometown">Quê quán</label>
-              <input type="text" className="min-w-[150px] col-span-2" id="hometown" name="hometown" value={hometown} onChange={(e) => setHometown(e.target.value)} />
+            <div className='py-[0.7em] grid md:grid-cols-3'>
+              <label htmlFor="hometown" className='label-text text-lg font-semibold'>Quê quán</label>
+              <input type="text" className="input input-sm min-w-[150px] col-span-2" id="hometown" name="hometown" value={hometown} onChange={(e) => setHometown(e.target.value)} />
             </div>
-            <button type="submit" value="submit" className='bg-white rounded block p-2 mx-auto'>Submit</button>
+            <button type="submit" value="submit" className='btn btn-md bg-secondary rounded-2xl block py-0 px-4 mx-auto mt-5 text-secondary-content border-none text-md align-middle hover:bg-info hover:text-info-content'>Submit</button>
           </form>
+          </div>
         </div>
     </div>
   )

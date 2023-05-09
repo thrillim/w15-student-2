@@ -19,16 +19,16 @@ export default function Table() {
     <div>        
       {isLoading && <div>Loading...</div>}
       {students && students.length === 0 && <div>There are no students</div>}
-      <table className="table rounded-xl m-[1.5em] bg-secondary-content border-spacing-0.5" id="table">
+      <table className="table rounded-xl lg:m-[1.5em] md:m-[1em] bg-primary-content lg:border-spacing-0.5 md:border-spacing-0.2 sm:border-spacing-0 lg:text-[1em] md:text-[0.8em] sm:text-[0.65em]" id="table">
         <thead>
           <tr>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">STT</th>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">Mã SV</th>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">Họ và tên</th>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">Ngày sinh</th>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">Quê quán</th>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">Sửa</th>
-            <th className="text-[1em] text-neutral-content bg-neutral text-center">Xóa</th>
+            <th className="text-neutral-content bg-neutral text-center">STT</th>
+            <th className="text-neutral-content bg-neutral text-center">Mã SV</th>
+            <th className="text-neutral-content bg-neutral text-center">Họ và tên</th>
+            <th className="text-neutral-content bg-neutral text-center">Ngày sinh</th>
+            <th className="text-neutral-content bg-neutral text-center">Quê quán</th>
+            <th className="text-neutral-content bg-neutral text-center">Sửa</th>
+            <th className="text-neutral-content bg-neutral text-center">Xóa</th>
           </tr>
         </thead>
         <tbody>
@@ -40,8 +40,8 @@ export default function Table() {
               <td className='text-black'>{student.name}</td>
               <td className='text-center text-black'>{rewriteDate(student.birthDate)}</td>
               <td className='text-black'>{student.hometown}</td>
-              <td className='text-center text-black'><UpdateButton id={student.id}/></td>
-              <td className='text-center text-black'><button className="btn btn-error btn-sm">Delete</button></td>
+              <td className='text-center'><UpdateButton id={student.id}/></td>
+              <td className='text-center'><button className="btn btn-error btn-sm text-[0.9em]">Delete</button></td>
               {/* <td><DeleteBtn id={student.id} /></td> */}
             </tr>
           ))}
