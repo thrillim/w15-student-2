@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  id        Int      @id
+  name      String
+  birthDate DateTime @db.Date
+  gender    String
+  hometown  String
+  classId   String?
+  Class     Class?   @relation(fields: [classId], references: [id], onDelete: Restrict)
+
+  @@index([classId], map: "Student_classId_fkey")
+}
+
+model Class {
+  id       String    @id
+  name     String
+  teacher  String
+  students Student[]
+}
