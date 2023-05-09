@@ -1,5 +1,5 @@
 'use client'
-import Student from "@prisma/client";
+// import Student from "@prisma/client";
 import useSWR from 'swr'
 import UpdateButton from '../updateButton/page'
 import { Student } from '@prisma/client';
@@ -22,25 +22,26 @@ export default function Table() {
       <table className="table rounded-xl m-[1.5em] bg-secondary-content border-spacing-0.5" id="table">
         <thead>
           <tr>
-            <th className="text-[1em] text-neutral-content bg-neutral">STT</th>
-            <th className="text-[1em] text-neutral-content bg-neutral">Mã SV</th>
-            <th className="text-[1em] text-neutral-content bg-neutral">Họ và tên</th>
-            <th className="text-[1em] text-neutral-content bg-neutral">Ngày sinh</th>
-            <th className="text-[1em] text-neutral-content bg-neutral">Quê quán</th>
-            <th className="text-[1em] text-neutral-content bg-neutral">Sửa</th>
-            <th className="text-[1em] text-neutral-content bg-neutral">Xóa</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">STT</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">Mã SV</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">Họ và tên</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">Ngày sinh</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">Quê quán</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">Sửa</th>
+            <th className="text-[1em] text-neutral-content bg-neutral text-center">Xóa</th>
           </tr>
         </thead>
         <tbody>
         {students && students.length > 0 && 
           students.map((student: any, index: any) => (
             <tr key={index}>
-              <th>{index + 1}</th>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{rewriteDate(student.birthDate)}</td>
-              <td>{student.hometown}</td>
-              <td><UpdateButton id={student.id}/></td>
+              <th className='text-center text-black'>{index + 1}</th>
+              <td className='text-center text-black'>{student.id}</td>
+              <td className='text-black'>{student.name}</td>
+              <td className='text-center text-black'>{rewriteDate(student.birthDate)}</td>
+              <td className='text-black'>{student.hometown}</td>
+              <td className='text-center text-black'><UpdateButton id={student.id}/></td>
+              <td className='text-center text-black'><button className="btn btn-error btn-sm">Delete</button></td>
               {/* <td><DeleteBtn id={student.id} /></td> */}
             </tr>
           ))}

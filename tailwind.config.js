@@ -30,7 +30,7 @@ module.exports = {
           "error": "#F16A6C",
         },
       },
-      "dark",
+      // "dark",
       // "coffee",
     ],
   }
