@@ -2,8 +2,16 @@
 // import Student from "@prisma/client";
 import useSWR, { mutate } from 'swr'
 import UpdateButton from '../updateButton/page'
-import { Student } from '@prisma/client';
+import CreateButton from '../createButton/page'
 
+type Student = {
+  id?: number,
+  name?: string,
+  birthDate?: Date,
+  gender?: string,
+  hometown?: string,
+  classId?: string,
+}
 
 function rewriteDate(date: string) {
   let day = date.slice(8, 10);

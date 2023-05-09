@@ -39,7 +39,7 @@ export async function PUT(request: Request,
       // return NextResponse.json({ error: 'Student not found' }, { status: 400 })
     }
   } finally {
-    console.log(data)
+    console.log("update: ", data)
     return NextResponse.json(data)
   }
 }
