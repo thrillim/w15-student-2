@@ -89,7 +89,7 @@ export default function updateStudent({ params }: { params: { id: string } }) {
               <label htmlFor="hometown" className='label-text text-lg font-semibold'>Quê quán</label>
               <input type="text" className="input input-sm min-w-[150px] col-span-2" id="hometown" name="hometown" value={hometown} onChange={(e) => setHometown(e.target.value)} />
             </div>
-            <button type="submit" value="submit" className='btn btn-md bg-secondary rounded-2xl block py-0 px-4 mx-auto mt-5 text-secondary-content border-none text-md align-middle hover:bg-info hover:text-info-content'>Submit</button>
+            <button type="submit" value="submit" className='btn btn-md bg-secondary rounded-2xl block py-0 px-4 mx-auto mt-7 text-secondary-content border-none text-md align-middle hover:bg-info hover:text-info-content'>Submit</button>
           </form>
           </div>
         </div>
