@@ -19,12 +19,13 @@ export async function POST(request: Request) {
       throw new Error('Method not allowed')
     }
     data = await request.json()
-    if (!parseInt(data.classId)) {
-      throw new Error('classId must be a number')
+    // console.log("adadaz: ", data)
+    if (!parseInt(data.id)) {
+      throw new Error('id must be a number')
     }
     student = await prisma.student.create({
       data: {
-        id: data.id,
+        id: parseInt(data.id),
         name: data.name ? data.name : "Not given",
         birthDate: data.birthDate ? new Date(data.birthDate) : new Date("1000-01-01"),
         gender: "Not given",
@@ -39,7 +40,7 @@ export async function POST(request: Request) {
       // return NextResponse.json({ error: 'Student already exists' }, { status: 400 })
     }
   } finally {
-    console.log(data)
+    console.log("create: ", data)
     return NextResponse.json(data)
   }
 }

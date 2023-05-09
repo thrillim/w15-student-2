@@ -2,7 +2,9 @@
 import Student from "@prisma/client";
 import useSWR from 'swr'
 import UpdateButton from '../updateButton/page'
+import CreateButton from '../createButton/page'
 import { Student } from '@prisma/client';
+
 
 function rewriteDate(date: string) {
   let day = date.slice(8, 10);
@@ -19,6 +21,7 @@ export default function Table() {
     <div>        
       {isLoading && <div>Loading...</div>}
       {students && students.length === 0 && <div>There are no students</div>}
+      <CreateButton />
       <table className="table rounded-xl m-[1.5em] bg-secondary-content border-spacing-0.5" id="table">
         <thead>
           <tr>
