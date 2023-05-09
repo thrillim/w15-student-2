@@ -43,6 +43,14 @@ export default function updateStudent({ params }: { params: { id: string } }) {
 
   function submitForm(e: React.FormEvent) {
     e.preventDefault()
+    if (name.length > 100) {
+      console.log("Name is too long, please under 100 characters");
+      return false;
+    }
+    if (hometown.length > 100) {
+      console.log("Hometown is too long, please under 100 characters");
+      return false;
+    }
     const data = fetch(`/api/updateStudent/${params.id}`, {
       method: 'PUT',
       body: JSON.stringify({
@@ -71,7 +79,7 @@ export default function updateStudent({ params }: { params: { id: string } }) {
             </div>
             <div className='py-[0.7em] grid md:grid-cols-3'>
               <label htmlFor="name" className='label-text text-lg font-semibold'>Họ và tên</label>
-              <input type="text" className="input input-sm min-w-[150px] col-span-2" id="name" name="name" required maxLength={60} value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" className="input input-sm min-w-[150px] col-span-2" id="name" name="name" required value={name} onChange={(e) => setName(e.target.value)} />
             </div>
             <div className='py-[0.7em] grid md:grid-cols-3'>
               <label htmlFor="birthDate" className='label-text text-lg font-semibold'>Ngày sinh</label>
