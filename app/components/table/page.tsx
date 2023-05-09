@@ -21,14 +21,14 @@ export default function Table() {
       {students && students.length === 0 && <div>There are no students</div>}
       <table className="table rounded-xl lg:m-[1.5em] md:m-[1em] bg-primary-content lg:border-spacing-0.5 md:border-spacing-0.2 sm:border-spacing-0 lg:text-[1.2em] md:text-[0.9em] sm:text-[0.7em]" id="table">
         <thead>
-          <tr>
-            <th className="text-neutral-content bg-neutral text-center">STT</th>
-            <th className="text-neutral-content bg-neutral text-center">Mã SV</th>
-            <th className="text-neutral-content bg-neutral text-center">Họ và tên</th>
-            <th className="text-neutral-content bg-neutral text-center">Ngày sinh</th>
-            <th className="text-neutral-content bg-neutral text-center">Quê quán</th>
-            <th className="text-neutral-content bg-neutral text-center">Sửa</th>
-            <th className="text-neutral-content bg-neutral text-center">Xóa</th>
+          <tr className="text-neutral-content bg-neutral text-center">
+            <th className='text-[1em]'>STT</th>
+            <th className='text-[1em]'>Mã SV</th>
+            <th className='text-[1em]'>Họ và tên</th>
+            <th className='text-[1em]'>Ngày sinh</th>
+            <th className='text-[1em]'>Quê quán</th>
+            <th className='text-[1em]'>Sửa</th>
+            <th className='text-[1em]'>Xóa</th>
           </tr>
         </thead>
         <tbody>
