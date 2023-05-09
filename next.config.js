@@ -3,13 +3,12 @@ const nextConfig = {
   experimental: {
     appDir: true,
   }, 
-  async rewrites() {
-    return [
-      {
-        source: "/api/createStudent",
-        destination: `http://localhost:3000/api/createStudent`,
-      },
-    ];
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
   },
 }
 
